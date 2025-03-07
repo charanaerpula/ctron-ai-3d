@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>C-tron 3D AI</title>
+    <script>
+      // Disable right click
+      document.addEventListener('contextmenu', e => e.preventDefault());
+      
+      // Disable keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+        if (
+          // Disable View Source (Ctrl+U/Cmd+U)
+          (e.ctrlKey && e.keyCode === 85) || 
+          (e.metaKey && e.keyCode === 85) ||
+          // Disable Developer Tools (F12)
+          e.keyCode === 123 ||
+          // Disable Ctrl+Shift+I/Cmd+Option+I
+          (e.ctrlKey && e.shiftKey && e.keyCode === 73) ||
+          (e.metaKey && e.altKey && e.keyCode === 73)
+        ) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // Additional protection against dev tools
+      setInterval(function(){
+        debugger;
+      }, 100);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
